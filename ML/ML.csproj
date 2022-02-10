@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>e2d453d7-962f-4840-b6df-5a680b7fafac</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\AnomalyDetection\**" />
+    <Compile Remove="Models\Regression\**" />
+    <Content Remove="Models\AnomalyDetection\**" />
+    <Content Remove="Models\Regression\**" />
+    <EmbeddedResource Remove="Models\AnomalyDetection\**" />
+    <EmbeddedResource Remove="Models\Regression\**" />
+    <None Remove="Models\AnomalyDetection\**" />
+    <None Remove="Models\Regression\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ML.Models\ML.Models.csproj" />
+    <ProjectReference Include="..\ML.Services\ML.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\FastForest\" />
+    <Folder Include="TrainingData\FastForest\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>
